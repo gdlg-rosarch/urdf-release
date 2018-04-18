@@ -1,6 +1,6 @@
 <package format="2">
   <name>urdf</name>
-  <version>1.12.12</version>
+  <version>1.13.1</version>
   <description>
     This package contains a C++ parser for the Unified Robot Description
     Format (URDF), which is an XML format for representing a robot model.
@@ -16,8 +16,8 @@
   <license>BSD</license>
 
   <url type="website">http://ros.org/wiki/urdf</url>
-  <url type="repository">https://github.com/ros/robot_model</url>
-  <url type="bugtracker">https://github.com/ros/robot_model/issues</url>
+  <url type="repository">https://github.com/ros/urdf</url>
+  <url type="bugtracker">https://github.com/ros/urdf/issues</url>
 
   <buildtool_depend version_gte="0.5.68">catkin</buildtool_depend>
 
@@ -29,14 +29,17 @@
   <build_depend>pluginlib</build_depend>
   <build_depend>cmake_modules</build_depend>
   <build_depend>tinyxml</build_depend>
+  <build_depend>tinyxml2</build_depend>
 
   <exec_depend>liburdfdom-dev</exec_depend>
   <exec_depend>rosconsole_bridge</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>pluginlib</exec_depend>
   <exec_depend>tinyxml</exec_depend>
+  <exec_depend>tinyxml2</exec_depend>
 
   <build_export_depend>tinyxml</build_export_depend>
+  <build_export_depend>tinyxml2</build_export_depend>
   <build_export_depend>liburdfdom-headers-dev</build_export_depend>
 
   <test_depend>rostest</test_depend>

@@ -2,6 +2,26 @@
 Changelog for package urdf
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.13.1 (2018-04-05)
+-------------------
+* Eliminate a deprecation warning by renaming class_loader.h -> class_loader.hpp (`#16 <https://github.com/ros/urdf/issues/16>`_)
+* Make the pointers const for the new tinyxml2 APIs (`#15 <https://github.com/ros/urdf/issues/15>`_)
+* Contributors: Chris Lalancette, Shane Loretz
+
+1.13.0 (2018-03-19)
+-------------------
+* Add in TinyXML2 versions of the initXml API.
+  Also add in some tests, and add in a deprecation warning
+  for the TinyXML versions of the APIs.
+* Add some tests for the 'initXml' family of methods.
+* Small CMake fixups.
+  In particular, make sure we define the correct define when
+  building on WIN32.  Also do whitespace cleanup.
+* Windows compatibility from ROS2.
+* Style fixes from ROS2
+* update links now that this is in its own repo (`#7 <https://github.com/ros/urdf/issues/7>`_)
+* Contributors: Chris Lalancette, Dmitry Rozhkov, Mikael Arguedas
+
 1.12.12 (2017-11-08)
 --------------------
 * Switched to package format 2 and made rostest a test_depend (`#221 <https://github.com/ros/robot_model/pull/221>`_)
