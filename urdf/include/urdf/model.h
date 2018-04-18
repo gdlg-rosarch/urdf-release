@@ -34,51 +34,39 @@
 
 /* Author: Wim Meeussen */
 
-#ifndef URDF__MODEL_H_
-#define URDF__MODEL_H_
+#ifndef URDF_MODEL_H
+#define URDF_MODEL_H
 
 #include <string>
-
+#include <map>
 #include <urdf_model/model.h>
-
 #include <urdf/urdfdom_compatibility.h>
-
 #include <tinyxml.h>
-
-#include <tinyxml2.h>
-
+#include <boost/shared_ptr.hpp>
+#include <boost/weak_ptr.hpp>
 #include <ros/ros.h>
 
-#include "urdf/visibility_control.hpp"
+namespace urdf{
 
-namespace urdf
-{
-
-class Model : public ModelInterface
+class Model: public ModelInterface
 {
 public:
   /// \brief Load Model from TiXMLElement
-  URDF_EXPORT URDF_DEPRECATED("TinyXML API is deprecated, use the TinyXML2 version instead") bool initXml(TiXmlElement * xml);
+  bool initXml(TiXmlElement *xml);
   /// \brief Load Model from TiXMLDocument
-  URDF_EXPORT URDF_DEPRECATED("TinyXML API is deprecated, use the TinyXML2 version instead") bool initXml(TiXmlDocument * xml);
-  /// \brief Load Model from tinyxml2::XMLElement
-  URDF_EXPORT bool initXml(const tinyxml2::XMLElement *xml);
-  /// \brief Load Model from tinyxml2::XMLDocument
-  URDF_EXPORT bool initXml(const tinyxml2::XMLDocument *xml);
+  bool initXml(TiXmlDocument *xml);
   /// \brief Load Model given a filename
-  URDF_EXPORT bool initFile(const std::string & filename);
+  bool initFile(const std::string& filename);
   /// \brief Load Model given the name of a parameter on the parameter server
-  URDF_EXPORT bool initParam(const std::string & param);
-  /// \brief Load Model given the name of parameter on parameter server using provided nodehandle
-  URDF_EXPORT bool initParamWithNodeHandle(const std::string & param,
-    const ros::NodeHandle & nh = ros::NodeHandle());
+  bool initParam(const std::string& param);
+  /// \brief Load Model given the name of a parameter on the parameter server using provided nodehandle
+  bool initParamWithNodeHandle(const std::string& param, const ros::NodeHandle& nh = ros::NodeHandle());
   /// \brief Load Model from a XML-string
-  URDF_EXPORT bool initString(const std::string & xmlstring);
+  bool initString(const std::string& xmlstring);
 };
 
-// shared_ptr declarations moved to urdf/urdfdom_compatibility.h to allow for
-// std::shared_ptrs in latest version
+// shared_ptr declarations moved to urdf/urdfdom_compatibility.h to allow for std::shared_ptrs in latest version
 
-}  // namespace urdf
+}
 
-#endif  // URDF__MODEL_H_
+#endif
